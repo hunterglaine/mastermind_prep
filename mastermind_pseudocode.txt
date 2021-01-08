@@ -1,0 +1,86 @@
+# Mastermind!
+
+# Call random library to make the computer generate a random code later
+
+# Create function to greet player and provide instructions
+    # Greet player!
+
+    # Ask if the player already knows how to play the game 
+
+    # If they don't know how to play the game
+        # Display full instructions
+
+    # If they do know how to play 
+    #   Display abbreviated instructions that just tell them: The meaning of '0' (right number, wrong place), '1' (right number, right place), '-'(wrong number) in this version
+
+# Create a function to ask/return which level they want to play
+    # Ask the player which level they would like to play (easy, medium, or hard) and store code length, min range, and max range as a tuple based on that level
+
+    # if player chooses easy
+    #      set the code length to 4
+    #      set the min range to 2
+    #      set the max range to 7
+
+    # if instead, player chooses medium
+    #      set the code length to 5
+    #      set the min range to 2
+    #      set the max range to 7
+
+    # if instead, player chooses hard
+    #      set the code length to 5
+    #      set the min range to 2
+    #      set the max range to 9
+
+#Create function to generate a random number (generate_code) for the level in which you set parameters, length, range_a, and range_b
+    # Using random and the variables set above based on which difficulty level the player chooses, computer generates a 4/5-digit length string with digits ranging from 2-7 or 2-9
+    # Create an empty list to hold the digits that will be randomly generated  
+    # Loop through indices of a set range (0, length)
+        # At each index in the list, add a random integer from range_a to range_b, inclusive
+    # Convert the list of integers to strings 
+    # Join the strings together
+    # Return code string
+
+# Create variable to store the code string from generate_code function
+
+# Create an empty list to store all of the codes guessed and feedback in one place for display each turn
+
+# Create a counter to keep track of turns taken 
+ 
+# Start a loop 
+
+#Create a function to check if player has run out of turns    
+    # if player runs out of turns (10)
+        # Tell them they ran out of turns 
+        # Tell them what the secret code was
+        # End loop
+
+# Create a function to get a valid guess 
+    # Check (which must be code_length long) and store it to be printed next to the feedback marks 
+
+    # if player's guess is the same as the secret code
+        # Congratulate them for winning
+        # End loop
+
+    # Create an empty list to store feedback for this one guess (Should update each time the player makes a new guess)
+
+    # Create a list from the player's guess and one from the secret code that are used to remove the items at particular indices that are a perfect match to later check the list for partial match
+
+    # Create a list from the secret code 
+
+    # Loop through the player's guess and compare it at each index to the secret code 
+        # If player's guess digit at particular index is the same as secret code digit at same index
+            # Add a "1" to the feedback list
+            # Remove the item at particular index from the list of the player's guess and from the list of the secret code (otherwise, later when checking for partial match, will count exact matches again)
+
+    # Loop through the list you've made and removed from of player's guess
+        # If player's guess digit at a particluar index is in secret code list removed from
+            # Add a "0" to the feedback list
+            # Remove that item from the secret code list (so that I can't compare the same digit later in the guess and count it against only one instance of it in the secret code)
+
+        # Instead, if the player's guess digit is not in the secret code
+            # Add a "-" to the feedback list
+
+    #   On the same line as the player's guess print the "1"s, "0"s, and "-"s jumbled and print this each round (by the begininning of round 4, the play should see their 3 previous guesses along with the judgements in order to make their next logical guess)
+
+    # Increment the counter for turns taken by 1
+    # Tell the player how many turns they have left out of 10
